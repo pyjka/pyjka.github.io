@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.css">
+<link rel="stylesheet" type="text/css" href="https://handsontable.com/static/css/main.css">
+<script src="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.js"></script>
+
+  <a href="wajs.html">WA JS</a>
+  <a href="warp.html">WA RP</a>
+  <a href="wanm.html">WA NM</a>
+
+</head>
+<body>
+<div id="hot"></div>
+<script>
+
+// var currencyCodes = ['EUR', 'JPY', 'GBP', 'CHF', 'CAD', 'AUD', 'NZD', 'SEK', 'NOK', 'BRL', 'CNY', 'RUB', 'INR', 'TRY', 'THB', 'IDR', 'MYR', 'MXN', 'ARS', 'DKK', 'ILS', 'PHP'];
+// var flagRenderer = function (instance, td, row, col, prop, value, cellProperties) {
+//   var currencyCode = value;
+//   while (td.firstChild) {
+//     td.removeChild(td.firstChild);
+//   }
+//   if (currencyCodes.indexOf(currencyCode) > -1) {
+//     var flagElement = document.createElement('DIV');
+//     flagElement.className = 'flag ' + currencyCode.toLowerCase();
+//     td.appendChild(flagElement);
+//   } else {
+//     var textNode = document.createTextNode(value === null ? '' : value);
+//
+//     td.appendChild(textNode);
+//   }
+// };
+let url = 'https://wineapi2020.herokuapp.com/walpb';
+
+var dataObject = [];
+    fetch(url)
+    .then((res) => res.json())
+    .then(output => {
+        var huj = output;
+        dataObject.push.apply(dataObject, huj);
+    }
+).then(focus);
+function focus() {
+
+
+var hotElement = document.querySelector('#hot');
+var hotElementContainer = hotElement.parentNode;
+
+let hotSettings = {
+  data: dataObject,
+  columns: [
+    {
+      data: 'wine_name',
+      type: 'text'
+    },
+
+    {
+      data: 'wine_year',
+      type: 'numeric'
+    },
+    {
+      data: 'wine_region',
+      type: 'text'
+    },
+      {
+      data: 'wine_country',
+      type: 'text'
+    },
+  ],
+  stretchH: 'all',
+  width: 1100,
+  autoWrapRow: true,
+  height: 787,
+  maxRows: 100,
+  manualRowResize: true,
+  manualColumnResize: true,
+  rowHeaders: false,
+  colHeaders: [
+    'Wine',
+    'Year',
+    'Region',
+    'Country'
+  ],
+  manualRowMove: true,
+  manualColumnMove: true,
+  contextMenu: true,
+  filters: true,
+  dropdownMenu: true,
+    licenseKey: 'non-commercial-and-evaluation',
+    renderAllRows: true
+};
+
+hot = new Handsontable(hotElement, hotSettings);
+}
+
+</script>
+</body>
+</html>
