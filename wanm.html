@@ -4,6 +4,10 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.css">
 <link rel="stylesheet" type="text/css" href="https://handsontable.com/static/css/main.css">
 <script src="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.js"></script>
+
+  <a href="wajs.html">WA JS</a>
+  <a href="walpb.html">WA LPB</a>
+  <a href="warp.html">WA RP</a>
 </head>
 <body>
 <div id="hot"></div>
@@ -26,15 +30,17 @@
 //   }
 // };
 let url = 'https://wineapi2020.herokuapp.com/warp';
+
 var dataObject = [];
     fetch(url)
     .then((res) => res.json())
     .then(output => {
         var huj = output;
-        // console.log(output);
         dataObject.push.apply(dataObject, huj);
     }
-);
+).then(focus);
+function focus() {
+
 
 var hotElement = document.querySelector('#hot');
 var hotElementContainer = hotElement.parentNode;
@@ -84,6 +90,7 @@ let hotSettings = {
 };
 
 hot = new Handsontable(hotElement, hotSettings);
+}
 
 </script>
 </body>

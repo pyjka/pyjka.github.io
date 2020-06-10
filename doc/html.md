@@ -5,11 +5,11 @@ table of contents](TOC.md)
 
 By default, HTML5 Boilerplate provides two `html` pages:
 
-* [`index.html`](#indexhtml) - a default HTML skeleton that should form the
+* [`warp.html`](#indexhtml) - a default HTML skeleton that should form the
   basis of all pages on your website
 * `404.html` - a placeholder 404 error page
 
-## `index.html`
+## `warp.html`
 
 ### The `no-js` Class
 
@@ -200,7 +200,7 @@ npm install jQuery
 ```
 
 You can then copy the minified file into the `vendor` folder and add jQuery
-to the `index.html` manually.
+to the `warp.html` manually.
 
 To load jQuery from a CDN with a local fallback you can use the following:
 

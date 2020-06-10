@@ -6,9 +6,9 @@
   "license": "",
   "author": "",
   "scripts": {
-    "build": "parcel build index.html",
-    "dev": "parcel index.html --open",
-    "start": "npm run build && npm run dev",
+    "build": "parcel build warp.html",
+    "dev": "parcel warp.html --open",
+    "start": "npm run build && npm run dev"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
