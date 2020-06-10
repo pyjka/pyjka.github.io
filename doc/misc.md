@@ -188,8 +188,8 @@ if you're interested. The fields we provide are as follows:
   quickly with a bundler for your assets and a simple development server.
 
   * `start` builds your site and starts a server
-  * `build` builds your `index.html` using Parcel
-  * `dev` serves your `index.html` with a simple development server
+  * `build` builds your `warp.html` using Parcel
+  * `dev` serves your `warp.html` with a simple development server
 
 * `keywords` - an array of keywords used to discover your app in the npm
   registry
